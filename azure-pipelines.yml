@@ -3,7 +3,7 @@
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 variables:
-  alias: $(alias)
+  alis: $(alias)
   password: $(pwd)
 
 trigger:
@@ -35,5 +35,5 @@ steps:
     apkFiles: '**/*.apk'
     apksignerKeystoreFile: 'key.keystore'
     apksignerKeystorePassword: '$(password)'
-    apksignerKeystoreAlias: '$(alias)'
+    apksignerKeystoreAlias: '$(alis)'
     zipalign: false
