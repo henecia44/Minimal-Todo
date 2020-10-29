@@ -31,6 +31,6 @@ steps:
   inputs:
     apkFiles: '**/*.apk'
     apksignerKeystoreFile: 'key.keystore'
-    apksignerKeystorePassword: '$pwd'
-    apksignerKeystoreAlias: '$alias'
+    apksignerKeystorePassword: 'pwd'
+    apksignerKeystoreAlias: 'alias'
     zipalign: false
