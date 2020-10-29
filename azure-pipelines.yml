@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
+variables:
+  alias: $(alias)
+  password: $(pwd)
+
+
 steps:
 
 - task: Gradle@2
@@ -31,6 +36,6 @@ steps:
   inputs:
     apkFiles: '**/*.apk'
     apksignerKeystoreFile: 'key.keystore'
-    apksignerKeystorePassword: $(pwd)
+    apksignerKeystorePassword: '$(password)'
     apksignerKeystoreAlias: '$(alias)'
     zipalign: false
