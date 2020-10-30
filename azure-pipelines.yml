@@ -30,6 +30,7 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
+
 - task: AndroidSigning@3
   inputs:
     apkFiles: '**/*.apk'
@@ -37,3 +38,13 @@ steps:
     apksignerKeystorePassword: '$(password)'
     apksignerKeystoreAlias: '$(alis)'
     zipalign: false
+- task: CopyFiles@2
+  inputs:
+    Contents: '*.apk'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
