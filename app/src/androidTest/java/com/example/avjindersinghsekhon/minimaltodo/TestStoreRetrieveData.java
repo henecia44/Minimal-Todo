@@ -50,7 +50,7 @@ public class TestStoreRetrieveData extends ActivityUnitTestCase<MainActivity> {
         // Create some test data
         mTestData = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
-            mTestData.add(new ToDoItem(
+            mTestData.add(new ToDoItem(" ",
                     "item" + i,
                     false,
                     new Date()));
