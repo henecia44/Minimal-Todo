@@ -14,6 +14,8 @@ import com.example.avjindersinghsekhon.minimaltodo.R;
 import com.example.avjindersinghsekhon.minimaltodo.Settings.SettingsActivity;
 
 public class MainActivity extends AppDefaultActivity {
+    
+    public static final String FILENAME = "todoitems.json";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
