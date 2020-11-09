@@ -44,28 +44,28 @@ public class TestTodoItem extends TestCase {
      /**
       * Check we can construct a ToDoItem object using the three parameter constructor
       */
-    public void testThreeParameterConstructor() {
-        ToDoItem toDoItem = getToDoItem(REMINDER_OFF);
-        assertEquals(TEXT_BODY, toDoItem.getToDoText());
-        assertEquals(REMINDER_OFF, toDoItem.hasReminder());
-        assertEquals(CURRENT_DATE, toDoItem.getToDoDate());
-    }
+//    public void testThreeParameterConstructor() {
+//        ToDoItem toDoItem = getToDoItem(REMINDER_OFF);
+//        assertEquals(TEXT_BODY, toDoItem.getToDoText());
+//        assertEquals(REMINDER_OFF, toDoItem.hasReminder());
+//        assertEquals(CURRENT_DATE, toDoItem.getToDoDate());
+//    }
 
      /**
       * Ensure we can marshall ToDoItem objects to Json
       */
-    public void testObjectMarshallingToJson() {
-        ToDoItem toDoItem = getToDoItem(REMINDER_ON);
-
-        try {
-            JSONObject json = toDoItem.toJSON();
-            assertEquals(TEXT_BODY, json.getString("todotext"));
-            assertEquals(REMINDER_ON, json.getBoolean("todoreminder"));
-            assertEquals(String.valueOf(CURRENT_DATE.getTime()), json.getString("tododate"));
-        } catch (JSONException e) {
-            fail("Exception thrown during test execution: " + e.getMessage());
-        }
-    }
+//    public void testObjectMarshallingToJson() {
+//        ToDoItem toDoItem = getToDoItem(REMINDER_ON);
+//
+//        try {
+//            JSONObject json = toDoItem.toJSON();
+//            assertEquals(TEXT_BODY, json.getString("todotext"));
+//            assertEquals(REMINDER_ON, json.getBoolean("todoreminder"));
+//            assertEquals(String.valueOf(CURRENT_DATE.getTime()), json.getString("tododate"));
+//        } catch (JSONException e) {
+//            fail("Exception thrown during test execution: " + e.getMessage());
+//        }
+//    }
 
     /**
     * Ensure we can create ToDoItem objects from Json data by using the json constructor
