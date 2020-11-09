@@ -1,25 +1,28 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'jacoco'
 
 android {
     signingConfigs {
         release {
             keyAlias ''
             keyPassword ''
-            storeFile file('/Users/avjindersinghsekhon/androidapps.jks')
             storePassword ''
         }
     }
     compileSdkVersion 23
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "com.avjindersinghsekhon.minimaltodo"
+        applicationId "com.example.avjindersinghsekhon.minimaltodo"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 3
         versionName "1.2"
     }
     buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -29,10 +32,13 @@ android {
     lintOptions {
         abortOnError false
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.gms:play-services-analytics:7.8.0'
     implementation 'uk.co.chrisjenx:calligraphy:2.1.0'
     implementation 'com.github.ganfra:material-spinner:1.1.0'
