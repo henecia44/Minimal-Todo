@@ -107,7 +107,10 @@ public class ToDoItem implements Serializable {
         this.mToDoDate = mToDoDate;
     }
 
-
+    public static int addition(int a, int b) {
+        return (a + b);
+    }
+    
     public UUID getIdentifier() {
         return mTodoIdentifier;
     }
